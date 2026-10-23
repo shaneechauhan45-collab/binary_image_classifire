@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>Sorting Master | DSA Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">S</span>
+      <span>Sorting<span class="accent">Master</span></span>
+    </a>
+    <nav>
+      <a href="#visualizer">Visualizer</a>
+      <a href="#complexity">Complexity</a>
+      <a href="#learn">Learn DSA</a>
+    </nav>
+    <span class="status"><span class="dot"></span> Ready to sort</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">INTERACTIVE DSA LAB</span>
+      <h1>Master the art of <span class="gradient">sorting.</span></h1>
+      <p>Visualize algorithms, understand every comparison, and explore the logic behind efficient code.</p>
+    </section>
+
+    <section class="panel" id="visualizer">
+      <div class="section-heading">
+        <div>
+          <h2>Sorting Visualizer</h2>
+          <p>Watch your algorithms come to life.</p>
+        </div>
+        <span class="live-badge"><span class="dot"></span> LIVE LAB</span>
+      </div>
+
+      <div class="toolbar">
+        <label class="field">
+          <span>ALGORITHM</span>
+          <select id="algorithm">
+            <option value="bubble">Bubble Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="quick">Quick Sort</option>
+            <option value="heap">Heap Sort</option>
+          </select>
+        </label>
+
+        <label class="field range-field">
+          <span>ARRAY SIZE <b id="sizeValue">40</b></span>
+          <input id="arraySize" type="range" min="10" max="100" value="40">
+        </label>
+
+        <label class="field range-field">
+          <span>SPEED <b id="speedValue">Medium</b></span>
+          <input id="speed" type="range" min="1" max="100" value="55">
+        </label>
+
+        <button id="newArray" class="button secondary">↻ New Array</button>
+      </div>
+
+      <div class="visualizer-top">
+        <div>
+          <span class="muted">CURRENT ALGORITHM</span>
+          <h3 id="algorithmName">Bubble Sort</h3>
+        </div>
+        <span id="runStatus" class="run-status">● Ready</span>
+      </div>
+
+      <div id="bars" class="bars" role="img" aria-label="Animated array of values to sort"></div>
+
+      <div class="legend">
+        <span><i class="key default-key"></i>Unsorted</span>
+        <span><i class="key compare-key"></i>Comparing</span>
+        <span><i class="key swap-key"></i>Swapping / Active</span>
+        <span><i class="key sorted-key"></i>Sorted</span>
+      </div>
+
+      <div class="controls">
+        <button id="start" class="button primary">▶ Start Sorting</button>
+        <button id="pause" class="button secondary" disabled>Ⅱ Pause</button>
+        <button id="reset" class="button secondary">↺ Reset</button>
+      </div>
+
+      <div class="metrics">
+        <article class="metric">
+          <span>COMPARISONS</span>
+          <strong id="comparisons">0</strong>
+        </article>
+        <article class="metric">
+          <span>SWAPS / WRITES</span>
+          <strong id="swaps">0</strong>
+        </article>
+        <article class="metric">
+          <span>ELAPSED TIME</span>
+          <strong id="elapsed">0.00 s</strong>
+        </article>
+        <article class="metric">
+          <span>ARRAY SIZE</span>
+          <strong id="metricSize">40</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel" id="complexity">
+      <div class="section-heading">
+        <div>
+          <h2>Algorithm Analysis</h2>
+          <p>Compare theoretical time and space complexity.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Algorithm</th>
+              <th>Best Time</th>
+              <th>Average Time</th>
+              <th>Worst Time</th>
+              <th>Space</th>
+            </tr>
+          </thead>
+          <tbody id="complexityBody"></tbody>
+        </table>
+      </div>
+      <p class="note">Complexities describe typical implementations; actual performance also depends on the input and implementation details.</p>
+    </section>
+
+    <section class="panel" id="learn">
+      <div class="section-heading">
+        <div>
+          <h2>Understand the Algorithm</h2>
+          <p>Learn what happens behind the bars.</p>
+        </div>
+      </div>
+      <div class="learn-content">
+        <div class="learn-icon">⌘</div>
+        <div>
+          <h3 id="learnTitle">Bubble Sort</h3>
+          <p id="learnDescription"></p>
+          <div class="complexity-pills">
+            <span id="learnTime"></span>
+            <span id="learnSpace"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="brand"><span class="brand-icon">S</span> Sorting<span class="accent">Master</span></div>
+      <p>Built for curious minds. Powered by algorithms.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
